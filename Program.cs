@@ -19,14 +19,20 @@
 // Console.WriteLine(ToFahrenheit(100));
 // Console.WriteLine(ToFahrenheit(37));
 // Задание 5
-Console.WriteLine(Factorial(5));
-for (int i = 2; i <51; i++)
-{
-    if (BoolIsPrime(i) == true)
-    {
-        System.Console.WriteLine(i);
-    }
-}
+// Console.WriteLine(Factorial(5));
+// for (int i = 2; i <51; i++)
+// {
+//     if (BoolIsPrime(i) == true)
+//     {
+//         System.Console.WriteLine(i);
+//     }
+// }
+// Задание 6
+int a1 = ReadPositive("Введите первое число: ");
+int a2 = ReadPositive("Введите второе число: ");
+Console.WriteLine($"Сумма: {a1 + a2}");
+
+
 
 
 
@@ -104,7 +110,8 @@ static long Factorial(int n)
     }
     return factorial;
 } 
-static bool BoolIsPrime(int n){
+static bool BoolIsPrime(int n)
+{
     int a = 0;
     for (int i = 1; i < n + 1; i++)
     {
@@ -113,11 +120,23 @@ static bool BoolIsPrime(int n){
             a += 1;
         }
     }
-    if (a == 2){
+    if (a == 2)
+    {
         return true;
     }
-    else{
+    else
+    {
         return false;
     }
-    
+
+}
+static int ReadPositive(string message)
+{
+    int a;
+    do
+    {
+        Console.Write(message);
+        a = int.Parse(Console.ReadLine()!);
+    } while (a <= 0);
+    return a;
 }
