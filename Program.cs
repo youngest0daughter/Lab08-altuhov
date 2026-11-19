@@ -1,4 +1,26 @@
-﻿static void PrintLine()
+﻿//Задание 1
+// PrintLine();
+// Console.WriteLine("Отчет");
+// PrintLine();
+// PrintHeader("Заголовок");
+// Задание 2.1
+// Console.WriteLine(Max(1, 2));
+// Console.WriteLine(Max(4, 2));
+// Задание 2.2
+// Console.WriteLine(IsEven(4));
+// Console.WriteLine(IsEven(7));
+// Console.WriteLine(IsEven(0));
+// Задание 3
+int[] marks = { 120, 45, 300, 80, 15, 210 };
+Console.WriteLine(Average(marks));
+Console.WriteLine(CountGreater(marks, 100));
+
+
+
+
+
+
+static void PrintLine()
 {
     Console.WriteLine(":)");
 }
@@ -30,14 +52,25 @@ static bool IsEven(int n)
         return false;
     }
 }
-//Задание 1
-// PrintLine();
-// Console.WriteLine("Отчет");
-// PrintLine();
-// PrintHeader("Заголовок");
-// Задание 2.1
-Console.WriteLine(Max(1, 2));
-Console.WriteLine(Max(4, 2));
-Console.WriteLine(IsEven(4));
-Console.WriteLine(IsEven(7));
-Console.WriteLine(IsEven(0));
+static double Average(int[] arr)
+{
+    int sum = 0;
+    foreach (int x in arr)
+    {
+        sum += x;
+    }
+    double a = sum / arr.Length;
+    return a;
+}
+static int CountGreater(int[] arr, int limit)
+{
+    int sum = 0;
+    foreach (int x in arr)
+    {
+        if (x > limit)
+        {
+            sum += 1;
+        }
+    }
+    return sum;
+}
