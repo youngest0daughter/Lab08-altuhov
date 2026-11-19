@@ -28,12 +28,46 @@
 //     }
 // }
 // Задание 6
-int a1 = ReadPositive("Введите первое число: ");
-int a2 = ReadPositive("Введите второе число: ");
-Console.WriteLine($"Сумма: {a1 + a2}");
-
-
-
+// int a1 = ReadPositive("Введите первое число: ");
+// int a2 = ReadPositive("Введите второе число: ");
+// Console.WriteLine($"Сумма: {a1 + a2}");
+// Итоговая задача. «Меню-калькулятор»
+Console.Write("Введите первое число: ");
+int num1 = int.Parse(Console.ReadLine());
+Console.Write("Введите второе число: ");
+int num2 = int.Parse(Console.ReadLine());
+Console.WriteLine("выберите пункт: ");
+Console.WriteLine("1 - сумма");
+Console.WriteLine("2 - большее из двух чисел");
+Console.WriteLine("3 - факториал");
+Console.WriteLine("0 - выход");
+int h = int.Parse(Console.ReadLine()!);
+while (h != 0)
+{
+    Console.WriteLine("1 - сумма");
+    Console.WriteLine("2 - большее из двух чисел");
+    Console.WriteLine("3 - факториал");
+    Console.WriteLine("0 - выход");
+    switch (h)
+    {
+        case 1:
+            Console.WriteLine($"сумма: {sum(num1, num2)}");
+            break;
+        case 2:
+            Console.WriteLine($"большее число: {Max(num1, num2)}");
+            break;
+        case 3:
+            Console.WriteLine($"факториал 1 числа: {Factorial(num1)}");
+            Console.WriteLine($"факториал 2 числа: {Factorial(num2)}");
+            break;
+        case 0:
+            break;
+        default:
+            Console.WriteLine("Нет такого пункта");
+            break;
+    }
+        h = int.Parse(Console.ReadLine()!);
+    } 
 
 
 
@@ -52,6 +86,10 @@ static void PrintHeader(string title)
     PrintLine();
     Console.WriteLine(title);
     PrintLine();
+}
+static int sum(int a, int b)
+{
+    return a+b;
 }
 static int Max(int a, int b)
 {
