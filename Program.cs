@@ -15,9 +15,24 @@
 // Console.WriteLine(Average(marks));
 // Console.WriteLine(CountGreater(marks, 100));
 // Задание 4
-Console.WriteLine(ToFahrenheit(0));
-Console.WriteLine(ToFahrenheit(100));
-Console.WriteLine(ToFahrenheit(37));
+// Console.WriteLine(ToFahrenheit(0));
+// Console.WriteLine(ToFahrenheit(100));
+// Console.WriteLine(ToFahrenheit(37));
+// Задание 5
+Console.WriteLine(Factorial(5));
+for (int i = 2; i <51; i++)
+{
+    if (BoolIsPrime(i) == true)
+    {
+        System.Console.WriteLine(i);
+    }
+}
+
+
+
+
+
+
 
 
 
@@ -79,4 +94,30 @@ static int CountGreater(int[] arr, int limit)
 static double ToFahrenheit(double celsius)
 {
     return celsius * 9 / 5 + 32;
+}
+static long Factorial(int n)
+{
+    long factorial = 1;
+    for (int i = 0; i < n; i++)
+    {
+        factorial += factorial * i;
+    }
+    return factorial;
+} 
+static bool BoolIsPrime(int n){
+    int a = 0;
+    for (int i = 1; i < n + 1; i++)
+    {
+        if (n % i == 0)
+        {
+            a += 1;
+        }
+    }
+    if (a == 2){
+        return true;
+    }
+    else{
+        return false;
+    }
+    
 }
